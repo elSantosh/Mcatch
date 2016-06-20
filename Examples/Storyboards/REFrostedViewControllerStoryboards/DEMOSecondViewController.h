@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
 
-@interface DEMOSecondViewController : UIViewController
+#import "DemoBaseViewController.h"
+#import <Charts/Charts.h>
+
+@interface DEMOSecondViewController : DemoBaseViewController
+
+@property (nonatomic, strong) NSMutableArray *result;
+
 
 - (IBAction)showMenu;
+
+@property (weak, nonatomic) IBOutlet UITableView *CampaignInfoTable;
 
 @end

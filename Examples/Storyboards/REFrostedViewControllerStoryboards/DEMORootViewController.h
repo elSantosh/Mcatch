@@ -10,5 +10,10 @@
 #import "REFrostedViewController.h"
 
 @interface DEMORootViewController : REFrostedViewController
-
+{
+    NSString *AdvId;
+    NSString *AdvId3;
+}
+@property (nonatomic, retain) NSString *AdvId;
+@property (nonatomic, retain) NSString *AdvId3;
 @end

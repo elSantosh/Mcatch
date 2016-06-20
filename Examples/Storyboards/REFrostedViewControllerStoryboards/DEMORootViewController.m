@@ -14,10 +14,23 @@
 
 @implementation DEMORootViewController
 
+@synthesize AdvId;
+@synthesize AdvId3;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+  
+  
+   // Do any additional setup after loading the view.
+    
+}
 - (void)awakeFromNib
 {
+    
+    
     self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     self.menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
+   
 }
 
 @end

@@ -10,5 +10,9 @@
 #import "REFrostedViewController.h"
 
 @interface DEMOMenuViewController : UITableViewController
+{
+    NSString *AdvId2;
+}
+@property (nonatomic, retain) NSString *AdvId2;
 
 @end

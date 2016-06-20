@@ -7,15 +7,44 @@
 //
 
 #import "DEMOAppDelegate.h"
+#import "DEMORootViewController.h"
+#import "PubViewController.h"
+#import "AdminViewController.h"
 
 @implementation DEMOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    NSNumber *session = [[NSUserDefaults standardUserDefaults] objectForKey:@"session"];
+    
+    NSNumber *accType = [[NSUserDefaults standardUserDefaults] objectForKey:@"accType"];
+   
+    if ([session isEqualToNumber:@1]) {
+        
+        if ([accType isEqualToNumber:@2]) {
+    
+        DEMORootViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"rootController"];
+    
+            self.window.rootViewController = vc;
+    
+        }
+        else if ([accType isEqualToNumber:@3])
+        {
+            PubViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"pubRoot"];
+            self.window.rootViewController = vc;
+        }
+        else if ([accType isEqualToNumber:@1])
+        {
+            AdminViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AdminRoot"];
+            self.window.rootViewController = vc;
+        }
+        
+    }
     return YES;
+    
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
